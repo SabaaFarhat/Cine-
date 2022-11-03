@@ -6,6 +6,8 @@ import Container from "./components/Container";
 import Details from "./components/Details";
 import LongMetrage from "./LongMetrage/LongMetrageList";
 
+import AllActors from "./Acteurs/AllActors";
+
 function App() {
   return (
     <div className="App">
@@ -24,6 +26,8 @@ function App() {
             <Route path=":movieId" element={<Details />} />
           </Route>
           <Route path="/longmetrage" element={<LongMetrage />}></Route>
+
+          <Route path="/actors" element={<AllActors />} />
         </Routes>
       </MovieProvider>
     </div>
