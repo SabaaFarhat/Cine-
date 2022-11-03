@@ -5,13 +5,43 @@ import MovieContext from "../MovieContext";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { motion } from "framer-motion";
 import defaultImage from "../assets/no-image.jpg";
+import acteurService from './service';
 
 
 function Actor({ actor }) {
 
+    const [actorVar, setactorVar] = useState({})
+    const [movies, setmovies] = useState([])
+    const [series, setseries] = useState([])
+
     useEffect(() => {
-        console.log(actor)
+        const fetchData = async (name) => {
+            setactorVar(await acteurService.getActor(name))
+        }
+        fetchData(actor.Name)
     }, [])
+
+    useEffect(() => {
+        getMoviesAndSeries()
+    }, [actorVar])
+
+    const getMoviesAndSeries = () => {
+        if (actorVar.length !== 0) {
+            actorVar.forEach(a => {
+                if (!movies.includes(a.Film)) {
+                    movies.push(a.Film)
+                }
+                if (!series.includes(a.Série)) {
+                    series.push(a.Série)
+                }
+            })
+        }
+    }
+
+    useEffect(() => {
+        console.log(actor.Acteur, movies, series)
+    }, [movies, series])
+
 
     return (
         <motion.div
@@ -22,7 +52,7 @@ function Actor({ actor }) {
             className="movie"
         >
 
-            <Link to={`/movie/${actor.id}`}>
+            <Link to={`/actors/${actor.Acteur}`}>
                 <div className="shadow"></div>
             </Link>
             {actor.Acteur !== null ? (
@@ -30,7 +60,7 @@ function Actor({ actor }) {
             ) : (
                 <img src={defaultImage} />
             )}
-            <h2>{actor.Age} {actor.Salaire}</h2>
+            <h2>Acteur : {actor.Acteur} <br /> Age : {actor.Age}  <br /> Salaire : {actor.Salaire}</h2>
         </motion.div>
     )
 }
