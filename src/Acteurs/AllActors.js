@@ -31,7 +31,7 @@ function AllActors() {
           return <Actor  actor={actor} />;
         })}
       </motion.div>
-      {filtered.length === 0 && <p className="info">No Actors to display</p>}
+      {actors.length === 0 && <p className="info">No Actors to display</p>}
     </>
   )
 }
