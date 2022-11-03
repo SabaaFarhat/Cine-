@@ -4,6 +4,7 @@ import { MovieProvider } from "./MovieContext";
 import Panel from "./components/Panel";
 import Container from "./components/Container";
 import Details from "./components/Details";
+import AllActors from "./Acteurs/AllActors";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/movie">
             <Route path=":movieId" element={<Details />} />
           </Route>
+          <Route path="/actors" element={<AllActors />} />
         </Routes>
       </MovieProvider>
     </div>
