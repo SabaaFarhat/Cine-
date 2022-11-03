@@ -25,9 +25,9 @@ function App() {
           <Route path="/movie">
             <Route path=":movieId" element={<Details />} />
           </Route>
-          <Route path="/longmetrage" element={<LongMetrage />}></Route>
 
           <Route path="/actors" element={<AllActors />} />
+          <Route path="/longmetrage" element={<LongMetrage />}></Route>
         </Routes>
       </MovieProvider>
     </div>
