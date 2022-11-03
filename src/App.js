@@ -4,6 +4,8 @@ import { MovieProvider } from "./MovieContext";
 import Panel from "./components/Panel";
 import Container from "./components/Container";
 import Details from "./components/Details";
+import LongMetrage from "./LongMetrage/LongMetrageList";
+
 import AllActors from "./Acteurs/AllActors";
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
           <Route path="/movie">
             <Route path=":movieId" element={<Details />} />
           </Route>
+          <Route path="/longmetrage" element={<LongMetrage />}></Route>
+
           <Route path="/actors" element={<AllActors />} />
         </Routes>
       </MovieProvider>
