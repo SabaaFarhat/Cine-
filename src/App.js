@@ -5,7 +5,7 @@ import Panel from "./components/Panel";
 import Container from "./components/Container";
 import Details from "./components/Details";
 import LongMetrage from "./LongMetrage/LongMetrageList";
-
+import ViewActor from "./Acteurs/ViewActor";
 import AllActors from "./Acteurs/AllActors";
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
           <Route path="/longmetrage" element={<LongMetrage />}></Route>
 
           <Route path="/actors" element={<AllActors />} />
+          <Route path="/actor/:name" element={<ViewActor />} />
         </Routes>
       </MovieProvider>
     </div>

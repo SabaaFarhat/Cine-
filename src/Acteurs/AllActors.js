@@ -17,13 +17,6 @@ function AllActors() {
     fetchData()
   }, [])
 
-  useEffect(() => {
-    console.log(actors)
-  }, [actors])
-
-
-
-
   return (
     <>
       <motion.div layout className="popular-movies">
