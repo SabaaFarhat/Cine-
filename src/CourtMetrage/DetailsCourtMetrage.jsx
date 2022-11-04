@@ -37,7 +37,7 @@ console.log(courtMetrages)
           {courtMetrage.poster_path !== null ? (
             <img
               className="img-bg"
-              src={require("../assets/court-métrage.png")} 
+              src={require("../assets/"+courtMetrage.Name+".jpg")}
             />
           ) : (
             <img className="img-bg" src={defaultImage} />

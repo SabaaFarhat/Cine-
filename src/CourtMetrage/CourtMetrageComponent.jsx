@@ -23,7 +23,7 @@ function CourMetrageComponent({courtMetrage}) {
                 <div className="shadow"></div>
             </Link>
             {courtMetrage.Name !== null ? (
-                <img src={require("../assets/court-métrage.png")} alt={courtMetrage.Name} />
+                <img height="50px" src={require("../assets/"+courtMetrage.Name+".jpg")} alt={courtMetrage.Name} />
             ) : (
                 <img src={defaultImage} />
             )}
