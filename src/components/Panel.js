@@ -10,6 +10,7 @@ import { AiOutlineStar } from "react-icons/ai";
 
 import { useContext } from "react";
 import MovieContext from "../MovieContext";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Panel = () => {
   const {
@@ -20,6 +21,7 @@ const Panel = () => {
     fetchTopRated,
     fetchUncoming,
   } = useContext(MovieContext);
+  let navigate = useNavigate();
 
   return (
     <div className="panel">
@@ -40,17 +42,18 @@ const Panel = () => {
         />
 
         <BiCameraMovie
-          onClick={() => fetchUncoming()}
+          onClick={() => navigate('/courtMetrages')}
           className={header === "Uncoming" ? "active" : null}
         />
       </div>
       <div>
-        <AiOutlineStar
+        {/* <AiOutlineStar
           onClick={() => getFavourites()}
           className={header === "Your favourites" ? "active" : null}
-        />
+        /> */}
 
-        <FaUserCircle></FaUserCircle>
+        <FaUserCircle onClick={() => navigate('/actors')}>
+        </FaUserCircle>
       </div>
     </div>
   );
