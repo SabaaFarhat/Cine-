@@ -4,10 +4,13 @@ import { MovieProvider } from "./MovieContext";
 import Panel from "./components/Panel";
 import Container from "./components/Container";
 import Details from "./components/Details";
+import MiniSeries from "./MiniSerie/MiniSeries";
 import LongMetrage from "./LongMetrage/LongMetrageList";
 import ViewActor from "./Acteurs/ViewActor";
 import AllActors from "./Acteurs/AllActors";
-
+import AllCourtMetrages from "./CourtMetrage/index";
+import DetailsFilm from "./CourtMetrage/DetailsCourtMetrage";
+import DetailsMiniserie from "./MiniSerie/DetailsMiniserie";
 function App() {
   return (
     <div className="App">
@@ -25,10 +28,17 @@ function App() {
           <Route path="/movie">
             <Route path=":movieId" element={<Details />} />
           </Route>
-          <Route path="/longmetrage" element={<LongMetrage />}></Route>
+          <Route path="/miniserie" element={<MiniSeries />} />
+          <Route path="/miniserie/:name" element={<DetailsMiniserie />} />
 
           <Route path="/actors" element={<AllActors />} />
+
           <Route path="/actor/:name" element={<ViewActor />} />
+
+          <Route path="/courtMetrages" element={<AllCourtMetrages />} />
+          <Route path="/courtMetrages/:filmName" element={<DetailsFilm />} />
+          <Route path="/longmetrage" element={<LongMetrage />}></Route>
+
         </Routes>
       </MovieProvider>
     </div>

@@ -1,28 +1,35 @@
-import * as React from "react";
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import "./todo.css";
-import { todoService } from "../../services/todo.Service";
+import React, { useEffect, useState } from 'react'
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import MovieContext from "../MovieContext";
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
+import { motion } from "framer-motion";
+import defaultImage from "../assets/no-image.jpg";
 
-const CourtMetrageComponent = ({courtMetrages}) => {
-  
-    const renderList = tasks.map((courtMetrage) => {
-        const { Acteur, SociétéDeProduction, DateSortie, Genre,Réalisateur, Producteur, Court_Métrage } = courtMetrage;
-        return (
-            <Card sx={{ maxWidth: 345 }} style={{backgroundColor:"gainsboro",marginLeft:"13px",marginTop:"13px"}} key={_id}>
 
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-        Court métrage name : {Court_Métrage}
-        </Typography>
-      </CardContent>
-    </Card>
-        );
-    });
+function CourMetrageComponent({courtMetrage}) {
 
-    return renderList;
-};
-export default CourtMetrageComponent;
+    console.log(courtMetrage)
+    return (
+        <motion.div
+            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 0 }}
+            layout
+            className="movie"
+        >
+
+            <Link to={`/courtMetrages/${courtMetrage.Name}`}>
+                <div className="shadow"></div>
+            </Link>
+            {courtMetrage.Name !== null ? (
+                <img src={require("../assets/court-métrage.png")} alt={courtMetrage.Name} />
+            ) : (
+                <img src={defaultImage} />
+            )}
+            <h2>Nom : {courtMetrage.Name} / Date : {courtMetrage.DateSortie}</h2>
+        </motion.div>
+    )
+}
+
+export default CourMetrageComponent

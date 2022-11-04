@@ -19,19 +19,21 @@ function LongMetrage({ longmetrage }) {
       layout
       className="movie"
     >
-      {/* <Link to={`/movie/${longmetrage.id}`}>
+      <Link to={`/movie/${longmetrage.id}`}>
         <div className="shadow"></div>
-      </Link> */}
-      {/* {longmetrage.Acteur !== null ? (
+      </Link>
+
+      {longmetrage.Long_Métrage !== null ? (
         <img
-          src={require("../assets/" + longmetrage.Acteur + ".jpg")}
-          alt={longmetrage.Acteur}
+          src={require("../assets/" + longmetrage.Long_Métrage + ".jpg")}
+          alt={longmetrage.Long_Métrage}
         />
       ) : (
         <img src={defaultImage} />
-      )} */}
+      )}
       <h2>
-        {longmetrage.Pulp_Fiction} {longmetrage.Samuel_L_Jackson}
+        SociétéDeProduction: {longmetrage.SociétéDeProduction}
+        Acteur: {longmetrage.Acteur} Date de sortie: {longmetrage.DateSortie}
       </h2>
     </motion.div>
   );

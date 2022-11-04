@@ -2,7 +2,7 @@ import axios from "axios";
 
 const getLongMetrage = () => {
   return axios
-    .get("http://localhost:8005/SpringMVC/cinema/acteurs")
+    .get("http://localhost:8005/SpringMVC/cinema/long-metrage")
     .then((res) => res.data);
 };
 
