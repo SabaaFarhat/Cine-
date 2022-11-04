@@ -1,15 +1,15 @@
-import React, { useContext, useEffect } from "react";
-import Movie from "./Movie";
-import MovieContext from "../MovieContext";
+import React, { useContext, useEffect } from 'react';
+import Movie from './Movie';
+import MovieContext from '../MovieContext';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const MoviesList = () => {
   const { filtered, fetchPopular, header, setActiveGenre } =
     useContext(MovieContext);
 
   useEffect(() => {
-    if (header === "Trending") {
+    if (header === 'Trending') {
       fetchPopular();
     }
   }, [header]);
