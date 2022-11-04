@@ -10,6 +10,7 @@ import LongMetrage from "./LongMetrage/LongMetrageList";
 import AllActors from "./Acteurs/AllActors";
 import AllCourtMetrages from "./CourtMetrage/index";
 import DetailsFilm from "./CourtMetrage/DetailsCourtMetrage";
+import DetailsMiniserie from "./MiniSerie/DetailsMiniserie";
 function App() {
   return (
     <div className="App">
@@ -28,6 +29,7 @@ function App() {
             <Route path=":movieId" element={<Details />} />
           </Route>
           <Route path="/miniserie"element={<MiniSeries />} />
+          <Route path="/miniserie/:name"element={<DetailsMiniserie />} />
 
           <Route path="/actors" element={<AllActors />} />
         <Route path="/courtMetrages" element={<AllCourtMetrages />} />
