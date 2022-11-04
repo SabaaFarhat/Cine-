@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 
 import LongMetrage from "./LongMetrage";
 import longmetrageService from "./service";
+import Search from "../components/Search";
+import Filter from "../components/Filter";
 
 function LongMetrageList() {
   const { filtered, fetchPopular, header, setActiveGenre } =
@@ -24,12 +26,15 @@ function LongMetrageList() {
 
   return (
     <>
+    <div className="container">
+      <Search />
+      <Filter />
       <motion.div layout className="popular-movies">
         {longmetrages.map((longmetrage, id) => {
           return <LongMetrage longmetrage={longmetrage} key={id} />;
         })}
       </motion.div>
-      {filtered.length === 0 && <p className="info">No Films to display</p>}
+      </div>
     </>
   );
 }

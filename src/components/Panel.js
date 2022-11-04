@@ -34,7 +34,7 @@ const Panel = () => {
         </FaUserCircle>
 
         <BiMoviePlay
-          onClick={() => fetchNowPlaying()}
+          onClick={() => navigate('/longmetrage')}
           className={header === "Now playing" ? "active" : null}
         />
 
