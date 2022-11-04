@@ -3,6 +3,9 @@ import CourtMetrageService from './CourtMetrage.Service';
 import MovieContext from "../MovieContext";
 import CourtMetrageComponent from './CourtMetrageComponent';
 import { motion } from "framer-motion";
+import Search from '../components/Search';
+import Filter from '../components/Filter';
+import Header from '../components/Header';
 
 function AllCourtMetrages() {
   const { filtered, fetchPopular, header, setActiveGenre } =
@@ -27,11 +30,15 @@ function AllCourtMetrages() {
 
   return (
     <>
+    <div className="container">
+      <Search />
+      <Filter />
       <motion.div layout className="popular-movies">
         {courtMetrages.map((courtMetrage) => {
           return <CourtMetrageComponent  courtMetrage={courtMetrage} />;
         })}
       </motion.div>
+      </div>
     </>
   )
 }

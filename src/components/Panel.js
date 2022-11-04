@@ -27,7 +27,7 @@ const Panel = () => {
     <div className="panel">
       <div>
         <MdOutlineMovieFilter
-          onClick={() => fetchPopular()}
+          onClick={() => navigate('/miniSerie')}
           className={header === "Trending" ? "active" : null}
         />
 
@@ -45,8 +45,6 @@ const Panel = () => {
           onClick={() => navigate('/courtMetrages')}
           className={header === "Uncoming" ? "active" : null}
         />
-      </div>
-      <div>
         {/* <AiOutlineStar
           onClick={() => getFavourites()}
           className={header === "Your favourites" ? "active" : null}
