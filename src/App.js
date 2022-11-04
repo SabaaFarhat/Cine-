@@ -9,6 +9,7 @@ import LongMetrage from "./LongMetrage/LongMetrageList";
 
 import AllActors from "./Acteurs/AllActors";
 import AllCourtMetrages from "./CourtMetrage/index";
+import DetailsFilm from "./CourtMetrage/DetailsCourtMetrage";
 function App() {
   return (
     <div className="App">
@@ -30,7 +31,7 @@ function App() {
 
           <Route path="/actors" element={<AllActors />} />
         <Route path="/courtMetrages" element={<AllCourtMetrages />} />
-
+        <Route path="/courtMetrages/:filmName" element={<DetailsFilm />} />
           <Route path="/longmetrage" element={<LongMetrage />}></Route>
         </Routes>
       </MovieProvider>

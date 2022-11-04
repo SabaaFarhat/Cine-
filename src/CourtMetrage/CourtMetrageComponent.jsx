@@ -19,7 +19,7 @@ function CourMetrageComponent({courtMetrage}) {
             className="movie"
         >
 
-            <Link to={`/courtMetrage/${courtMetrage.Name}`}>
+            <Link to={`/courtMetrages/${courtMetrage.Name}`}>
                 <div className="shadow"></div>
             </Link>
             {courtMetrage.Name !== null ? (

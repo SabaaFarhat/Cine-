@@ -11,8 +11,21 @@ async function getAll() {
       console.log(err);
     });
 }
+
+async function getByName($name) {
+  return await axios
+    .get("http://localhost:8005/SpringMVC/cinema/court-metrage/"+$name)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 let  CourtMetrageService = {
-  getAll
+  getAll,
+  getByName
 };
 
 export default CourtMetrageService;

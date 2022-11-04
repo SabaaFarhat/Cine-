@@ -32,7 +32,6 @@ function AllCourtMetrages() {
           return <CourtMetrageComponent  courtMetrage={courtMetrage} />;
         })}
       </motion.div>
-      {filtered.length === 0 && <p className="info">No Films to display</p>}
     </>
   )
 }
