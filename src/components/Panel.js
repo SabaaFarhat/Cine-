@@ -30,15 +30,12 @@ const Panel = () => {
           onClick={() => navigate('/miniSerie')}
           className={header === "Trending" ? "active" : null}
         />
+        <FaUserCircle onClick={() => navigate('/producers')}>
+        </FaUserCircle>
 
         <BiMoviePlay
           onClick={() => fetchNowPlaying()}
           className={header === "Now playing" ? "active" : null}
-        />
-
-        <BsStars
-          onClick={() => fetchTopRated()}
-          className={header === "Top rated" ? "active" : null}
         />
 
         <BiCameraMovie

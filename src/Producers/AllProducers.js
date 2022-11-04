@@ -31,7 +31,6 @@ function AllProducers() {
     <>
     <Search />
       <Filter />
-      <Header />
       <motion.div layout className="popular-movies">
         {producers.map((producer) => {
           return <Producer  producer={producer} />;
