@@ -31,7 +31,7 @@ function Miniserie({ miniserie }) {
             className="movie"
         >
 
-            <Link to={`/mini-serie/${miniserie.Mini_Serie}`}>
+            <Link to={`/miniserie/${miniserie.Mini_Serie}`} value={miniserie}>
                 <div className="shadow"></div>
             </Link>
             {miniserie.Mini_Serie !== null ? (
