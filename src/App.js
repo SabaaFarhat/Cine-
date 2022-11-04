@@ -5,6 +5,7 @@ import Panel from "./components/Panel";
 import Container from "./components/Container";
 import Details from "./components/Details";
 import AllActors from "./Acteurs/AllActors";
+import AllCourtMetrages from "./CourtMetrage/index";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path=":movieId" element={<Details />} />
           </Route>
           <Route path="/actors" element={<AllActors />} />
+        <Route path="/courtMetrages" element={<AllCourtMetrages />} />
         </Routes>
       </MovieProvider>
     </div>
